@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="./js/angular.js"></script>
+    <title>angular table</title>
+    <style>
+        table, td  {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+<table>
+    <tr ng-repeat="x in names">
+        <td style="{{$even?'background-color: #f1f1f1':''}}">{{$index + 1}}</td>
+        <td style="{{$even?'background-color: #f1f1f1':''}}">{{ x.Name }}</td>
+        <td style="{{$even?'background-color: #f1f1f1':''}}">{{ x.Country
+            }}
+        </td>
+    </tr>
+</table>
+</div>
+</body>
+</html>
+
+<script>
+    var namedata = [
+        {
+            "Name": "Alfreds Futterkiste",
+            "Country": "Germany"
+        },
+
+        {
+            "Name": "Ana Trujillo Emparedados y helados",
+            "Country": "Mexico"
+        },
+        {
+            "Name": "Antonio Moreno Taquería",
+            "Country": "Mexico"
+        },
+        {
+            "Name": "Around the Horn",
+            "Country": "UK"
+        },
+        {
+            "Name": "B's Beverages",
+            "Country": "UK"
+        },
+        {
+            "Name": "Berglunds snabbköp",
+            "Country": "Sweden"
+        },
+        {
+            "Name": "Blauer See Delikatessen",
+            "Country": "Germany"
+        },
+        {
+            "Name": "Blondel père et fils",
+            "Country": "France"
+        },
+        {
+            "Name": "Bólido Comidas preparadas",
+            "Country": "Spain"
+        },
+        {
+            "Name": "Bon app'",
+            "Country": "France"
+        },
+        {
+            "Name": "Bottom-Dollar Marketse",
+            "Country": "Canada"
+        },
+        {
+            "Name": "Cactus Comidas para llevar",
+            "Country": "Argentina"
+        },
+        {
+            "Name": "Centro comercial Moctezuma",
+            "Country": "Mexico"
+        }
+    ]
+
+
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function ($scope, $http) {
+        $scope.names = namedata;
+        /*$http.get("/try/angularjs/data/Customers_JSON.php")
+            .then(function (result) {
+                $scope.names = result.data.records;
+            });*/
+    });
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap-combined.min.css" type="text/css"/>
+    <script type="text/javascript" src="./js/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="./js/popper.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+	<script type="text/javascript" src="./js/angular.js"></script>
+	<script type="text/javascript" src="./js/userController.js"></script>
+</head>
+<body>
+
+	<div ng-app="myApp" ng-controller="userCtrl">
+		<div ng-include="'header.html'"></div>
+
+		<!--button-->
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<button class="btn" type="button">按钮</button>
+				</div>
+			</div>
+		</div>
+
+		名: <input type="text" ng-model="firstName"><br>
+		姓: <input type="text" ng-model="lastName"><br>
+		<br>
+		姓名: {{firstName + " " + lastName}}
+
+
+		<div ng-include="'userlist.html'"></div>
+
+	</div>
+
+
+</body>
+</html>
